@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0df-30-vNb">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="OHl-Qg-tM0">
+            <objects>
+                <viewController id="42N-tQ-fvD" customClass="PIViewController" customModule="DatePicker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZxE-uC-JeZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="IVn-IH-g48"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r7S-n0-yCC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUL-K8-ur5" customClass="PIDatePicker" customModule="DatePicker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="59" width="393" height="212"/>
+                                <color key="backgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="212" placeholder="YES" id="EaD-3N-3zS"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xh8-4R-V3E">
+                                <rect key="frame" x="37.666666666666657" y="334" width="155" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="40g-TS-b2b"/>
+                                    <constraint firstAttribute="width" constant="155" id="ngO-uj-byS"/>
+                                </constraints>
+                                <state key="normal" title="Random Color">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="randomizeColor:" destination="42N-tQ-fvD" eventType="touchUpInside" id="XMP-0r-2yF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G44-H8-jKp">
+                                <rect key="frame" x="209.66666666666663" y="334" width="146" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="146" id="2DL-yJ-bFE"/>
+                                    <constraint firstAttribute="height" constant="50" id="gKc-i8-5ad"/>
+                                </constraints>
+                                <state key="normal" title="Random Font">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="randomizeFont:" destination="42N-tQ-fvD" eventType="touchUpInside" id="ods-v7-GVO"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKU-dB-Qgb">
+                                <rect key="frame" x="105.66666666666669" y="404" width="183" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="183" id="6J9-av-dMX"/>
+                                    <constraint firstAttribute="height" constant="21" id="A2d-DU-ngr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="xh8-4R-V3E" secondAttribute="centerX" constant="146.5" id="8Ap-pJ-ZRh"/>
+                            <constraint firstItem="XUL-K8-ur5" firstAttribute="top" secondItem="ZxE-uC-JeZ" secondAttribute="bottom" id="G03-nO-TrM"/>
+                            <constraint firstItem="AKU-dB-Qgb" firstAttribute="top" secondItem="G44-H8-jKp" secondAttribute="bottom" constant="20" id="eM5-Zn-8zX"/>
+                            <constraint firstItem="xh8-4R-V3E" firstAttribute="top" secondItem="XUL-K8-ur5" secondAttribute="bottom" constant="63" id="f8P-7u-8fk"/>
+                            <constraint firstItem="XUL-K8-ur5" firstAttribute="leading" secondItem="r7S-n0-yCC" secondAttribute="leadingMargin" constant="-16" id="hbh-Xe-MSm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XUL-K8-ur5" secondAttribute="trailing" constant="-16" id="jBj-W6-2Jc"/>
+                            <constraint firstItem="G44-H8-jKp" firstAttribute="centerY" secondItem="xh8-4R-V3E" secondAttribute="centerY" id="k3k-ce-ElU"/>
+                            <constraint firstAttribute="centerX" secondItem="AKU-dB-Qgb" secondAttribute="centerX" constant="-0.5" id="yYb-l8-afJ"/>
+                            <constraint firstAttribute="centerX" secondItem="xh8-4R-V3E" secondAttribute="centerX" constant="81.5" id="yoe-we-2cb"/>
+                            <constraint firstAttribute="centerX" secondItem="G44-H8-jKp" secondAttribute="centerX" constant="-86" id="zSb-uY-bYF"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8Ap-pJ-ZRh"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="YKJ-UK-MEE"/>
+                    <connections>
+                        <outlet property="datePicker" destination="XUL-K8-ur5" id="SMl-I9-g5s"/>
+                        <outlet property="label" destination="AKU-dB-Qgb" id="PIz-gG-8HH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8iL-eN-Ks0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1246.5648854961833" y="388.73239436619718"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lb0-IR-xVK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0df-30-vNb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9fO-k7-m6z">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="42N-tQ-fvD" kind="relationship" relationship="rootViewController" id="6jM-Ux-l28"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BMJ-ES-FzA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="322.90076335877859" y="388.73239436619718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
