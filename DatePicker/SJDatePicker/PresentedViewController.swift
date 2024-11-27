@@ -12,7 +12,7 @@ typealias returnDate = (String?) -> ()
 
 class PresentedViewController: UIViewController {
     
-    private var picker:SJDatePicker = SJDatePicker()
+    private var picker:LJKDatePicker = LJKDatePicker()
     private var confirmButton:UIButton = UIButton()
     private let cornerRadius:CGFloat = 7.5
     private let pickerHeight:CGFloat = 216

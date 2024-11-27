@@ -25,7 +25,7 @@ class LJKDatePicker: PIDatePicker {
     }
     
     private func initialized() {
-//        self.preferredDatePickerStyle = .wheels
+        subviews.last?.setValue(UIView(), forKey: "topLineOrFillView")
         for view in self.subviews {
             for subView in view.subviews {
                 subView.backgroundColor = .clear
@@ -34,6 +34,7 @@ class LJKDatePicker: PIDatePicker {
         self.layer.masksToBounds = true
         self.backgroundColor = .clear
         
+        self.highlightedView.isUserInteractionEnabled = false
         self.highlightedView.frame = .zero
         self.highlightedView.backgroundColor = UIColor.clear
         self.highlightedView.layer.borderWidth = 1.0
@@ -50,12 +51,10 @@ class LJKDatePicker: PIDatePicker {
         if let text = style?.pickerColor {
             switch text {
             case .color(let color):
-//                self.setValue(color, forKeyPath: "textColor")
-                break
+                self.textColor = color
             case .colors(let colors):
                 let colors = updateGradientToUIColor(colors: colors)
-//                self.setValue(colors, forKeyPath: "textColor")
-                break
+                self.textColor = colors ?? .black
             }
         }
     }
@@ -63,8 +62,6 @@ class LJKDatePicker: PIDatePicker {
 
 private extension LJKDatePicker {
     private func setupStyle() {
-//        self.perform(NSSelectorFromString("setHighlightsToday:"), with: false)
-        
         if let minDate = style?.minimumDate {
             self.minimumDate = minDate
         }
@@ -72,18 +69,6 @@ private extension LJKDatePicker {
         if let maxDate = style?.maximumDate {
             self.maximumDate = maxDate
         }
-        
-//        if let minDate = minimumDate, let maxDate = maximumDate {
-//            assert(minDate < maxDate, "minimum date cannot bigger then maximum date")
-//        }
-//
-//        if let zone = style?.timeZone {
-//            self.timeZone = zone
-//        }
-//
-//        if let mode = style?.pickerMode {
-//            self.datePickerMode = mode
-//        }
         
         if let color = style?.textColor {
             self.highlightedView.layer.borderColor = color.cgColor
